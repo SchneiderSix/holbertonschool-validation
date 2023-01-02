@@ -4,7 +4,7 @@ build:	## Creates the site.
 clean:	## Clean the directory site.
 	rm -fr dist
 
-post:	## Creates a post with given POST_NAME and POST_TITLE.
+post:
 	hugo new posts/${POST_NAME}.md
 	sed -i '/title/c\title: "${POST_TITLE}"' content/posts/${POST_NAME}.md
 
