@@ -1,4 +1,4 @@
-build:	## Creates the site.
+build:
 	hugo > /dev/null 2>&1
 
 clean:
