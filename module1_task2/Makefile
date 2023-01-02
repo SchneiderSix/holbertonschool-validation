@@ -1,7 +1,7 @@
-build:
+build:	## Creates the site.
 	hugo > /dev/null 2>&1
 
-clean:
+clean:	## Clean the directory site.
 	rm -fr dist
 
 post:	## Creates a post with given POST_NAME and POST_TITLE.
