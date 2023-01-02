@@ -9,6 +9,6 @@ post:	## Creates a post with given POST_NAME and POST_TITLE.
 	sed -i '/title/c\title: "${POST_TITLE}"' content/posts/${POST_NAME}.md
 
 help:	## Show help for each of the Makefile recipes.
-	@echo "build : Creates the site."
-	@echo "clean : Clean the directory site."
-	@echo "post : Creates a post with given POST_NAME and POST_TITLE."
+	@echo "build: Creates the site."
+	@echo "clean: Clean the directory site."
+	@echo "post: Creates a post with given POST_NAME and POST_TITLE."
