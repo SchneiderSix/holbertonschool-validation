@@ -1,3 +1,4 @@
-apt-get update && apt-get install -y git make curl build-essential
+#!/bin/bash
+sudo apt-get update && sudo apt-get install hugo make
 make build
 exit 1
