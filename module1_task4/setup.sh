@@ -1,2 +1,1 @@
-apt-get update && apt-get install -y git make curl build-essential
-hugo new site dev
+sudo apt-get update && sudo apt-get install -y make curl build-essential
