@@ -1,0 +1,5 @@
+- name: Create symbolic link
+  file:
+    src: "."
+    dest: "/.github/workflows/module3_task0.yml"
+    state: link
