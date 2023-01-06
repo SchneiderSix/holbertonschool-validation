@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: Clone the repo
         uses: actions/checkout@v3
-      - name: Correct directory and execute the command make help
+      - name: Install setup
         working-directory: module3_task1
-        run: ./setup.sh
+        run: sudo ./setup.sh
       - name: build
         working-directory: module3_task1
         run: make build
