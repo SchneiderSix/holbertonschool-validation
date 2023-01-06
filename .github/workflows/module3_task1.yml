@@ -20,7 +20,7 @@ jobs:
         run: make help
       - name: Build
         working-directory: module3_task1
-        run: hugo dist
+        run: make build
       - name: Post
         working-directory: module3_task1
         run: make post POST_NAME=chori POST_TITLE=pan
