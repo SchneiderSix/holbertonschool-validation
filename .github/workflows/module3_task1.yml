@@ -16,7 +16,7 @@ jobs:
       - name: See commands
         run: cd module3_task1 && make help
       - name: Build
-        run: cd module3_task1 && make build
+        run: cd module3_task1 && hugo dist
       - name: Post
         run: cd module3_task1 && make post POST_NAME=chori POST_TITLE=pan
       - name: Clean
