@@ -1,5 +1,5 @@
 name: module3_task0
-on: 
+on:
   schedule:
     - cron: "0 0 * * *"
   push:
@@ -8,5 +8,5 @@ jobs:
   steps:
     - name: Clone the repo
       uses: actions/checkout@v3
-    - name: Correct directory and execute the command make help 
+    - name: Correct directory and execute the command make help
     - run: cd module3_task0 && make help
