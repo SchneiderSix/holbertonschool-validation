@@ -18,9 +18,6 @@ jobs:
       - name: See commands
         working-directory: module3_task1
         run: make help
-      - name: Build
-        working-directory: module3_task1
-        run: make build
       - name: Post
         working-directory: module3_task1
         run: make post POST_NAME=chori POST_TITLE=pan
