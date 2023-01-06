@@ -10,20 +10,20 @@ jobs:
       - name: Clone the repo
         uses: actions/checkout@v3
       - name: Correct directory and execute the command make help
-      - working-directory: module3_task1
+        working-directory: module3_task1
         run: make help
       - name: Install
-      - working-directory: module3_task1
+        working-directory: module3_task1
         run: ./setup.sh
       - name: See commands
-      - working-directory: module3_task1
+        working-directory: module3_task1
         run: make help
       - name: Build
-      - working-directory: module3_task1
+        working-directory: module3_task1
         run: hugo dist
       - name: Post
-      - working-directory: module3_task1
+        working-directory: module3_task1
         run: make post POST_NAME=chori POST_TITLE=pan
       - name: Clean
-      - working-directory: module3_task1
+        working-directory: module3_task1
         run: make clean
