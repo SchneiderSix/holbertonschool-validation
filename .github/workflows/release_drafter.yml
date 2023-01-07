@@ -21,7 +21,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: |
+          file: |
             module3_task4/awesome-website.zip
             module3_task4/DEPLOY.md
           draft: true
