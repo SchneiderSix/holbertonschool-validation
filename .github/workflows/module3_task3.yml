@@ -48,4 +48,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/1.0.0/')
         with:
+          name: 1.0.0
           files: module3_task2/DEPLOY.md
