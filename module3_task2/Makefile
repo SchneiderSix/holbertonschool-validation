@@ -8,7 +8,10 @@ post:	## Creates a post with given POST_NAME and POST_TITLE.
 	hugo new posts/${POST_NAME}.md
 	sed -i '/title/c\title: "${POST_TITLE}"' content/posts/${POST_NAME}.md
 
-package: ## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
+lint:	## Update files README.md and DEPLOY.md with markdownlint command line
+	markdownlint README.md DEPLOY.md
+
+package:	## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
 	zip -r awesome-website.zip dist
 
 help:	## Show help for each of the Makefile recipes.

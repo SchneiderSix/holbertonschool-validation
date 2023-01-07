@@ -27,3 +27,6 @@ jobs:
       - name: clean
         working-directory: module3_task2
         run: make clean
+      - name: lint
+        working-directory: module3_task2
+        run: make lint
