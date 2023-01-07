@@ -31,7 +31,5 @@ jobs:
         working-directory: module3_task2
         run: make lint
       - name: unit-tests
-        uses: actions/upload-artifact@v3
-        with:
-          working-directory: module3_task2
-          run: make unit-tests
+        working-directory: module3_task2
+        run: make unit-tests
