@@ -3,7 +3,7 @@ name: release_drafter
 on:
   push:
     branches: 
-    - default
+    - main
   pull_request:
     types: [opened, reopened, synchronize]
 
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: release-drafter/release-drafter@v5.21.1
         with:
-          config-name: release-drafter.yml
+          config-name: chori-drafter.yml
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
