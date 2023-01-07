@@ -33,6 +33,12 @@ jobs:
       - name: unit-tests
         working-directory: module3_task2
         run: make unit-tests
+      - name: integration-tests
+        working-directory: module3_task2
+        run: make integration-tests
+      - name: validate
+        working-directory: module3_task2
+        run: make validate
       - name: arti
         uses: actions/upload-artifact@v3
         with:
