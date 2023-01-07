@@ -18,5 +18,7 @@ unit-tests: ## ERROR: No comment found for target unit-tests in ./Makefile
 
 integration-tests: ## ERROR: No comment found for target integration-tests in ./Makefile
 
+validate: ## ERROR: No comment found for target validate in ./Makefile
+
 help: ## Show help for each of the Makefile recipes.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
