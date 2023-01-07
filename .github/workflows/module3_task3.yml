@@ -48,4 +48,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: module3_task2/DEPLOY.md
+          files: |
+            module3_task2/awesome-website.zip
+            module3_task2/DEPLOY.md
