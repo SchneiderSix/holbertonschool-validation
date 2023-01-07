@@ -3,6 +3,7 @@
 ##Prerequisites
 
 Go-Hugo, Make, Hugo, GNU Make version 3.81 or 4.0
+
 ##Lifecycle
 
 * build
@@ -14,6 +15,7 @@ Go-Hugo, Make, Hugo, GNU Make version 3.81 or 4.0
 * unit-tests
 * integration-tests
 * validate
+
 ##Workflow
 
 * 
