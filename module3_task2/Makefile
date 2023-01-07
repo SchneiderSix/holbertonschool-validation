@@ -10,7 +10,6 @@ post:	## Creates a post with given POST_NAME and POST_TITLE.
 
 package: ## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
 	zip -r awesome-website.zip dist
-	zip -u awesome-website.zip awesome-api
 
 help:	## Show help for each of the Makefile recipes.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
