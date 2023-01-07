@@ -17,6 +17,14 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-18.04
     steps:
+      - uses: xresloader/upload-to-github-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: |
+            module3_task4/awesome-website.zip
+            module3_task4/DEPLOY.md
+          draft: true
       - uses: release-drafter/release-drafter@v5.21.1
         with:
           config-name: chori-drafter.yml
