@@ -33,3 +33,8 @@ jobs:
       - name: unit-tests
         working-directory: module3_task2
         run: make unit-tests
+      - name: arti
+        uses: actions/upload-artifact@v3
+        with:
+          name: line
+          path: .module3_task2/
