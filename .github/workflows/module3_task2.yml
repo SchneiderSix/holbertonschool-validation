@@ -1,0 +1,29 @@
+name: module3_task2
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repo
+        uses: actions/checkout@v3
+      - name: Install setup
+        working-directory: module3_task2
+        run: sudo ./setup.sh
+      - name: build
+        working-directory: module3_task2
+        run: make build
+      - name: post
+        working-directory: module3_task2
+        run: make post POST_NAME=chori POST_TITLE=pan
+      - name: help
+        working-directory: module3_task2
+        run: make help
+      - name: package
+        working-directory: module3_task2
+        run: make package
+      - name: clean
+        working-directory: module3_task2
+        run: make clean
