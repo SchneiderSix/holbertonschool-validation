@@ -1,3 +1,4 @@
+
 name: module3_task5
 on:
   schedule:
@@ -43,6 +44,15 @@ jobs:
       - name: validate
         working-directory: module3_task5
         run: make validate
+      - name: build Again
+        working-directory: module3_task5
+        run: make build
+      - name: See current working directory
+        working-directory: module3_task5
+        run: pwd
+      - name: See current files
+        working-directory: module3_task5
+        run: ls
       - name: arti
         uses: actions/upload-artifact@v3
         with:
@@ -55,3 +65,17 @@ jobs:
           files: |
             module3_task5/awesome-website.zip
             module3_task5/DEPLOY.md
+      - name: Netlify Actions
+        uses: nwtgck/actions-netlify@v2.0.0
+        with:
+          publish-dir: "./module3_task5/dist"
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "🎉 Published on"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: jmdCcXhNf6YC8k7TvTdf5bxUXmoaNxgJjnzC_8r3EtM
+          NETLIFY_SITE_ID: 00fcb17f-fcbb-4f8c-a0b2-bc47afc858fc
+        timeout-minutes: 1
