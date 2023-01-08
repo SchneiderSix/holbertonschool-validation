@@ -14,15 +14,10 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-18.04
     steps:
-      - name: See current files
-        working-directory: module3_task4
-        run: ls
       - uses: release-drafter/release-drafter@v5.21.1
         with:
           config-name: chori-drafter.yml
           publish: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
         with:
           name: line
@@ -34,3 +29,6 @@ jobs:
           files: |
             module3_task4/awesome-website.zip
             module3_task4/DEPLOY.md
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
