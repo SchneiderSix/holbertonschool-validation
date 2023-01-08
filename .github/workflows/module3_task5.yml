@@ -43,6 +43,9 @@ jobs:
       - name: validate
         working-directory: module3_task5
         run: make validate
+      - name: build Again
+        working-directory: module3_task5
+        run: make build
       - name: arti
         uses: actions/upload-artifact@v3
         with:
