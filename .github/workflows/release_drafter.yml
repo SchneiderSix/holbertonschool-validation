@@ -1,12 +1,10 @@
 name: release_drafter
-
 on:
   pull_request:
     branches:
       - main
 permissions:
   contents: read
-
 jobs:
   update_release_draft:
     permissions:
@@ -19,4 +17,4 @@ jobs:
           config-name: chori-drafter.yml
           publish: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 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
