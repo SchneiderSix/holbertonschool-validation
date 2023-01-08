@@ -1,4 +1,4 @@
-name: Release Notes Builder
+name: release_drafter
 
 on:
   pull_request:
