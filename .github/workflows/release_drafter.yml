@@ -31,3 +31,6 @@ jobs:
           files: |
             module3_task4/awesome-website.zip
             module3_task4/DEPLOY.md
+      - name: See current files
+        working-directory: module3_task5
+        run: ls
