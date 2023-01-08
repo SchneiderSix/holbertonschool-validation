@@ -46,6 +46,12 @@ jobs:
       - name: build Again
         working-directory: module3_task5
         run: make build
+      - name: See current working directory
+        working-directory: module3_task5
+        run: pwd
+      - name: See current files
+        working-directory: module3_task5
+        run: ls
       - name: arti
         uses: actions/upload-artifact@v3
         with:
