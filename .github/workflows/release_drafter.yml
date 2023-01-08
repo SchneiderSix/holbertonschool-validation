@@ -4,9 +4,6 @@ on:
   pull_request:
     branches:
       - main
-permissions:
-  contents: read
-
 jobs:
   update_release_draft:
     permissions:
@@ -18,9 +15,5 @@ jobs:
         with:
           config-name: chori-drafter.yml
           publish: true
-      - uses: actions/upload-artifact@v3
-        with:
-          name: line
-          path: module3_task4/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
