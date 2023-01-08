@@ -17,4 +17,4 @@ jobs:
           config-name: chori-drafter.yml
           publish: true
         env:
-          GITHUB_TOKEN: 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
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
