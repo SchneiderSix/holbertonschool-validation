@@ -83,4 +83,5 @@ jobs:
           image: golang:1.15.8-buster
           run: |
             git clone https://github.com/SchneiderSix/holbertonschool-validation.git
-            ls holbertonschool-validation/module4_task0
+            cd holbertonschool-validation/module4_task0
+            make build
