@@ -80,6 +80,6 @@ jobs:
       - name: Run Docker Container
         uses: addnab/docker-run-action@v3
         with:
-          options : ${{ github.workspace }}/module4_task0
           image: golang:1.15.8-buster
+          options : -v ${{ github.workspace }}/module4_task0
           run: ls ${{ github.workspace }}/module4_task0
