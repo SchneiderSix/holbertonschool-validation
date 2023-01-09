@@ -85,8 +85,9 @@ jobs:
             git clone https://github.com/SchneiderSix/holbertonschool-validation.git
             cd holbertonschool-validation/module4_task0
             sudo apt-get update && sudo apt-get upgrade -y
-            sudo apt-get install -y make wget
-            apt-get install -y nodejs
+            sudo apt-get install -y make wget curl
+            curl -sL https://deb.nodesource.com/setup_8.x | bash -
+            sudo apt-get install -y nodejs
             wget https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_0.79.0_Linux-64bit.deb
             dpkg -i hugo_0.79.0_Linux-64bit.deb
             npm install -g markdownlint-cli
