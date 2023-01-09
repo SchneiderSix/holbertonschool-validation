@@ -1,33 +1,23 @@
 name: release_drafter
 
 on:
-  pull_request:
+  push:
     branches:
       - main
+  pull_request:
+    types: [opened, reopened, synchronize]
 permissions:
   contents: read
-
 jobs:
   update_release_draft:
     permissions:
       contents: write
       pull-requests: write
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: release-drafter/release-drafter@v5.21.1
+      - uses: release-drafter/release-drafter@v5
         with:
           config-name: chori-drafter.yml
-          publish: true
+          disable-autolabeler: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v3
-        with:
-          name: line
-          path: module3_task4/
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: |
-            module3_task4/awesome-website.zip
-            module3_task4/DEPLOY.md
