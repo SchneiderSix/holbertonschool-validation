@@ -77,3 +77,8 @@ jobs:
           NETLIFY_AUTH_TOKEN: jmdCcXhNf6YC8k7TvTdf5bxUXmoaNxgJjnzC_8r3EtM
           NETLIFY_SITE_ID: 00fcb17f-fcbb-4f8c-a0b2-bc47afc858fc
         timeout-minutes: 1
+      - name: Run Docker Container
+        uses: addnab/docker-run-action@v3
+        with:
+          image: golang:1.15.8-buster
+          run: go make build
