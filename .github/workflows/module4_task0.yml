@@ -81,4 +81,5 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: golang:1.15.8-buster
+          options: -v ${{ github.workspace }}
           run: ls && pwd && make build
