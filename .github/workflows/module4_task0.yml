@@ -81,5 +81,6 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: golang:1.15.8-buster
-          options : -v ${{ github.workspace }}/module4_task0
-          run: ls ${{ github.workspace }}/module4_task0
+          run: |
+            git clone https://github.com/SchneiderSix/holbertonschool-validation.git
+            ls holbertonschool-validation/module4_task0
