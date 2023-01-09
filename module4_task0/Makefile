@@ -1,5 +1,6 @@
 build: ## Creates the site.
 	hugo > /dev/null 2>&1
+	docker run --rm -v  golang:1.15.8-buster go hugo > /dev/null 2>&1
 
 clean: ## Clean the directory site.
 	rm -fr dist
