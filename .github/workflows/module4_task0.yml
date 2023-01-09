@@ -82,4 +82,4 @@ jobs:
         with:
           image: golang:1.15.8-buster
           options: -v ${{ github.workspace }}/module4_task0
-          run: ls
+          run: ls bin && ls src
