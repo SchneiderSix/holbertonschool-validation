@@ -81,4 +81,4 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: golang:1.15.8-buster
-          run: go build -v
+          run: ls && pwd && make build
