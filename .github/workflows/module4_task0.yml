@@ -6,6 +6,7 @@ on:
     branches:
       - main
   pull_request:
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -46,7 +47,7 @@ jobs:
         working-directory: module4_task0
         run: make build
       - name: See current working directory
-        working-directory: module4_task0
+        working-directory: module3_task5
         run: pwd
       - name: See current files
         working-directory: module4_task0
@@ -55,18 +56,18 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: line
-          path: module4_task0/
+          path: module3_task5/
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            module4_task0/awesome-website.zip
-            module4_task0/DEPLOY.md
+            module3_task5/awesome-website.zip
+            module3_task5/DEPLOY.md
       - name: Netlify Actions
         uses: nwtgck/actions-netlify@v2.0.0
         with:
-          publish-dir: "./module4_task0/dist"
+          publish-dir: "./module3_task5/dist"
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "🎉 Published on"
@@ -77,19 +78,3 @@ jobs:
           NETLIFY_AUTH_TOKEN: jmdCcXhNf6YC8k7TvTdf5bxUXmoaNxgJjnzC_8r3EtM
           NETLIFY_SITE_ID: 00fcb17f-fcbb-4f8c-a0b2-bc47afc858fc
         timeout-minutes: 1
-      - name: Run Docker Container
-        uses: addnab/docker-run-action@v3
-        with:
-          image: golang:1.15.8-buster
-          run: |
-            git clone https://github.com/SchneiderSix/holbertonschool-validation.git
-            cd holbertonschool-validation/module4_task0
-            apt-get update && sudo apt-get upgrade -y
-            apt-get install -y make wget curl
-            curl -sL https://deb.nodesource.com/setup_8.x | bash -
-            apt-get install -y nodejs build-essential
-            wget https://github.com/gohugoio/hugo/releases/download/v0.79.0/hugo_0.79.0_Linux-64bit.deb
-            dpkg -i hugo_0.79.0_Linux-64bit.deb
-            npm install -g markdownlint-cli
-            make build
-            ls
