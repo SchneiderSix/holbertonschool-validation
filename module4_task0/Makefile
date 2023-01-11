@@ -1,5 +1,5 @@
 build: ## Creates the site.
-	hugo > /dev/null 2>&1
+	hugo new site dist
 
 clean: ## Clean the directory site.
 	rm -fr dist
