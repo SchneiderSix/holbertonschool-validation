@@ -16,6 +16,9 @@ jobs:
       - name: Install setup
         working-directory: module4_task0
         run: sudo ./setup.sh
+      - name: Create folder dist
+        working-directory: module4_task0
+        run: mkdir dist
       - name: build
         working-directory: module4_task0
         run: make build
