@@ -17,9 +17,6 @@ jobs:
       - name: Install setup
         working-directory: module4_task0
         run: ./setup.sh
-      - name: Install zip
-        working-directory: module4_task0
-        run: apt-get install zip
       - name: build
         working-directory: module4_task0
         run: make build
