@@ -18,6 +18,8 @@ jobs:
       - name: Install setup
         working-directory: module4_task0
         run: ./setup.sh
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
       - name: build
         working-directory: module4_task0
         run: make build
