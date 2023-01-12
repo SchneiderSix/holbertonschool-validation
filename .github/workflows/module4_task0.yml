@@ -17,6 +17,9 @@ jobs:
       - name: Install setup
         working-directory: module4_task0
         run: ./setup.sh
+      - name: See files
+        working-directory: module4_task0
+        run: ls
       - name: build
         working-directory: module4_task0
         run: make build
