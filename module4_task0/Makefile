@@ -1,5 +1,5 @@
 build: ## Creates the site.
-	apt-get install subversion
+	sudo apt-get install subversion
 	svn checkout https://github.com/SchneiderSix/holbertonschool-validation/trunk/main/module3_task4/dist
 	
 clean: ## Clean the directory site.
