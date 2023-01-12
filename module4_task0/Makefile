@@ -1,6 +1,7 @@
 @build: ## Creates the site.
-	hugo > /dev/null 2>&1
-	exit
+	apt-get install subversion
+	svn checkout https://github.com/SchneiderSix/holbertonschool-validation/trunk/main/module3_task4/dist
+	
 @clean: ## Clean the directory site.
 	rm -fr dist
 
@@ -13,7 +14,6 @@
 
 @package: ## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
 	zip -r awesome-website.zip dist
-	exit
 
 @unit-tests: ## ERROR: No comment found for target unit-tests in ./Makefile
 
