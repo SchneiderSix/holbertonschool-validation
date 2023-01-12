@@ -2,66 +2,56 @@ name: module4_task0
 on:
   schedule:
     - cron: "0 0 * * *"
-  push:
-    branches:
-      - main
   pull_request:
-
+    types: [opened, reopened]
+  push:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     container: golang:1.15.8-buster
     steps:
-      - name: Clone the repo
+      - name: Checkout
         uses: actions/checkout@v3
-      - name: Install setup
+      - name: Setup node
+        uses: actions/setup-node@v3
+      - name: Run setup
         working-directory: module4_task0
         run: ./setup.sh
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Make commands
+      - name: Install markdown
+        run: npm install -g markdownlint-cli
+      - name: Run makefile commands
         working-directory: module4_task0
         run: |
           make help
-          make build
-          make post POST_NAME=chori POST_TITLE=pan
-          make package
-          make clean
-          make lint
           make unit-tests
           make integration-tests
+          make post POST_NAME=kanyewestlover911 POST_TITLE="find god"
           make validate
-      - name: See current working directory
-        working-directory: module3_task5
-        run: pwd
-      - name: See current files
-        working-directory: module4_task0
-        run: ls
-      - name: arti
+          make build
+          make package
+      - name: Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: line
-          path: module3_task5/
-      - name: Release
+          name: task0-arti
+          path: module4_task0/
+      - name: Make release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            module3_task5/awesome-website.zip
-            module3_task5/DEPLOY.md
-      - name: Netlify Actions
-        uses: nwtgck/actions-netlify@v2.0.0
+            module4_task0/DEPLOY.md
+            module4_task0/awesome-website.zip
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: "./module3_task5/dist"
+          publish-dir: './module3_task5/dist'
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "🎉 Published on"
+          deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
-          NETLIFY_AUTH_TOKEN: jmdCcXhNf6YC8k7TvTdf5bxUXmoaNxgJjnzC_8r3EtM
-          NETLIFY_SITE_ID: 00fcb17f-fcbb-4f8c-a0b2-bc47afc858fc
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ID }}
         timeout-minutes: 1
