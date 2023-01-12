@@ -22,36 +22,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: build
+      - name: Make commands
         working-directory: module4_task0
-        run: make build
-      - name: post
-        working-directory: module4_task0
-        run: make post POST_NAME=chori POST_TITLE=pan
-      - name: help
-        working-directory: module4_task0
-        run: make help
-      - name: package
-        working-directory: module4_task0
-        run: make package
-      - name: clean
-        working-directory: module4_task0
-        run: make clean
-      - name: lint
-        working-directory: module4_task0
-        run: make lint
-      - name: unit-tests
-        working-directory: module4_task0
-        run: make unit-tests
-      - name: integration-tests
-        working-directory: module4_task0
-        run: make integration-tests
-      - name: validate
-        working-directory: module4_task0
-        run: make validate
-      - name: build Again
-        working-directory: module4_task0
-        run: make build
+        run: |
+          make help
+          make build
+          make post POST_NAME=chori POST_TITLE=pan
+          make package
+          make clean
+          make lint
+          make unit-tests
+          make integration-tests
+          make validate
       - name: See current working directory
         working-directory: module3_task5
         run: pwd
