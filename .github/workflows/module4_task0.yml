@@ -2,56 +2,84 @@ name: module4_task0
 on:
   schedule:
     - cron: "0 0 * * *"
-  pull_request:
-    types: [opened, reopened]
   push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     container: golang:1.15.8-buster
     steps:
-      - name: Checkout
+      - name: Clone the repo
         uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
-      - name: Run setup
+      - name: Install setup
         working-directory: module4_task0
         run: ./setup.sh
-      - name: Install markdown
-        run: npm install -g markdownlint-cli
-      - name: Run makefile commands
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: build
         working-directory: module4_task0
-        run: |
-          make help
-          make unit-tests
-          make integration-tests
-          make post POST_NAME=kanyewestlover911 POST_TITLE="find god"
-          make validate
-          make build
-          make package
-      - name: Artifact
+        run: make build
+      - name: post
+        working-directory: module4_task0
+        run: make post POST_NAME=chori POST_TITLE=pan
+      - name: help
+        working-directory: module4_task0
+        run: make help
+      - name: package
+        working-directory: module4_task0
+        run: make package
+      - name: clean
+        working-directory: module4_task0
+        run: make clean
+      - name: lint
+        working-directory: module4_task0
+        run: make lint
+      - name: unit-tests
+        working-directory: module4_task0
+        run: make unit-tests
+      - name: integration-tests
+        working-directory: module4_task0
+        run: make integration-tests
+      - name: validate
+        working-directory: module4_task0
+        run: make validate
+      - name: build Again
+        working-directory: module4_task0
+        run: make build
+      - name: See current working directory
+        working-directory: module3_task5
+        run: pwd
+      - name: See current files
+        working-directory: module4_task0
+        run: ls
+      - name: arti
         uses: actions/upload-artifact@v3
         with:
-          name: task0-arti
-          path: module4_task0/
-      - name: Make release
+          name: line
+          path: module3_task5/
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            module4_task0/DEPLOY.md
-            module4_task0/awesome-website.zip
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.2
+            module3_task5/awesome-website.zip
+            module3_task5/DEPLOY.md
+      - name: Netlify Actions
+        uses: nwtgck/actions-netlify@v2.0.0
         with:
-          publish-dir: './module3_task5/dist'
+          publish-dir: "./module3_task5/dist"
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
+          deploy-message: "🎉 Published on"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ID }}
+          NETLIFY_AUTH_TOKEN: jmdCcXhNf6YC8k7TvTdf5bxUXmoaNxgJjnzC_8r3EtM
+          NETLIFY_SITE_ID: 00fcb17f-fcbb-4f8c-a0b2-bc47afc858fc
         timeout-minutes: 1
