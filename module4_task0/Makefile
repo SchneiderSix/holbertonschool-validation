@@ -1,5 +1,5 @@
 build: ## Creates the site.
-	svn checkout https://github.com/SchneiderSix/holbertonschool-validation/trunk/module3_task4/dist
+	echo "Nice"
 	
 clean: ## Clean the directory site.
 	rm -fr dist
