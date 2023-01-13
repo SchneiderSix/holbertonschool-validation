@@ -2,7 +2,7 @@ build: ## Creates the site.
 	echo "Nice"
 	
 clean: ## Clean the directory site.
-	rm -fr dist
+	sudo rm -fr dist
 
 post: ## Creates a post with given POST_NAME and POST_TITLE.
 	hugo new posts/${POST_NAME}.md
