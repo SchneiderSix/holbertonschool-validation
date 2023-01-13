@@ -5,5 +5,5 @@ npm install -g markdownlint-cli
 which go
 sudo rm -rvf /usr/local/go/bin/go
 sudo rm -fr /usr/bin/go
-svn checkout https://github.com/SchneiderSix/holbertonschool-validation/trunk/module3_task4/dist
+svn export https://github.com/SchneiderSix/holbertonschool-validation/trunk/module3_task4/dist
 exit 0
