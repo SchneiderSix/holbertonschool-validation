@@ -2,6 +2,7 @@ build: ## Creates the site.
 	git clone https://github.com/SchneiderSix/holbertonschool-validation.git
 	cp -R holbertonschool-validation/module3_task5/dist .
 	rm -fr holbertonschool-validation
+	touch awesome-api || echo "already awesome"
 	
 clean: ## Clean the directory site.
 	sudo rm -fr dist
@@ -15,7 +16,7 @@ lint: ## Update files README.md and DEPLOY.md with markdownlint command line
 
 package: ## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
 	zip -r awesome-website.zip dist
-	touch awesome-api
+	touch awesome-api || echo "already awesome"
 
 unit-tests: ## ERROR: No comment found for target unit-tests in ./Makefile
 
