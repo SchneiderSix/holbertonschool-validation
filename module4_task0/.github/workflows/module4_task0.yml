@@ -13,9 +13,16 @@ jobs:
     steps:
       - name: Clone the repo
         uses: actions/checkout@v3
+      - name: Install extra
+        run: |
+          sudo apt-get update && sudo apt-get install -y make wget npm zip git
+          npm install -g markdownlint-cli
       - name: Install setup
         working-directory: module4_task0
         run: sudo ./setup.sh
+      - name: build
+        working-directory: module4_task0
+        run: make build
       - name: post
         working-directory: module4_task0
         run: make post POST_NAME=chori POST_TITLE=pan
