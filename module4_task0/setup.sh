@@ -6,5 +6,6 @@ which go
 sudo rm -rvf /usr/local/go/bin/go
 sudo rm -fr /usr/bin/go
 git clone https://github.com/SchneiderSix/holbertonschool-validation.git
-ls
+cp -R holbertonschool-validation/module3_task5/dist .
+rm -fr holbertonschool-validation
 exit 0
