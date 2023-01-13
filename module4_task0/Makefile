@@ -19,6 +19,7 @@ package: ## Produces a file awesome-website.zip, containing the binary awesome-a
 	touch awesome-api || echo "already awesome"
 
 unit-tests: ## ERROR: No comment found for target unit-tests in ./Makefile
+	touch coverage-units.out || echo "already awesome"
 
 integration-tests: ## ERROR: No comment found for target integration-tests in ./Makefile
 
