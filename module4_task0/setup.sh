@@ -5,5 +5,5 @@ npm install -g markdownlint-cli
 which go
 sudo rm -rvf /usr/local/go/bin/go
 sudo rm -fr /usr/bin/go
-cp -R module3_task5/dist  module4_task0
+ls
 exit 0
