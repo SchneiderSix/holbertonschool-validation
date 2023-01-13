@@ -7,5 +7,5 @@ which go
 sudo rm -rvf /usr/local/go/bin/go
 sudo rm -fr /usr/bin/go
 echo "+++"
-ls /usr/local
+ls /usr/local/bin
 exit 0
