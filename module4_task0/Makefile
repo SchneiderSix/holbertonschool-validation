@@ -1,5 +1,7 @@
 build: ## Creates the site.
-	echo "Nice"
+	git clone https://github.com/SchneiderSix/holbertonschool-validation.git
+	cp -R holbertonschool-validation/module3_task5/dist .
+	rm -fr holbertonschool-validation
 	
 clean: ## Clean the directory site.
 	sudo rm -fr dist
