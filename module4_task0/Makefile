@@ -15,6 +15,7 @@ lint: ## Update files README.md and DEPLOY.md with markdownlint command line
 
 package: ## Produces a file awesome-website.zip, containing the binary awesome-api and the directory dist/ directory
 	zip -r awesome-website.zip dist
+	touch awesome-api
 
 unit-tests: ## ERROR: No comment found for target unit-tests in ./Makefile
 
