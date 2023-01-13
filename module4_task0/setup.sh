@@ -5,5 +5,4 @@ npm install -g markdownlint-cli
 which go
 sudo rm -rvf /usr/local/go/bin/go
 sudo rm -fr /usr/bin/go
-kill 456 || echo "Nothing killed"
 exit 0
