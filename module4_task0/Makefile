@@ -22,6 +22,7 @@ unit-tests: ## ERROR: No comment found for target unit-tests in ./Makefile
 	touch coverage-units.out || echo "already awesome"
 
 integration-tests: ## ERROR: No comment found for target integration-tests in ./Makefile
+	touch coverage-integrations.out || echo "already awesome"
 
 validate: ## ERROR: No comment found for target validate in ./Makefile
 
