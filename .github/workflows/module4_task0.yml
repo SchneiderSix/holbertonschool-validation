@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Install extra
         run: |
-          apt-get update && apt-get install -y make wget npm zip git
+          sudo apt-get update && sudo apt-get install -y make wget npm zip git
           npm install -g markdownlint-cli
       - name: Install setup
         working-directory: module4_task0
