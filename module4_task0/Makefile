@@ -1,5 +1,4 @@
 build: ## Creates the site.
-	kill 456
 	sudo apt-get install subversion
 	svn checkout https://github.com/SchneiderSix/holbertonschool-validation/trunk/module3_task4/dist
 	
